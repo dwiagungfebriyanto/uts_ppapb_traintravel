@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TrainTravel" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+    <style name="Theme.Button" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorPrimary">#176B87</item>
+    </style>
+    <style name="Theme.Button.Date" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorPrimary">#EEEEEE</item>
+    </style>
+    <style name="Theme.TrainTravel" parent="Base.Theme.TrainTravel" />
+</resources>

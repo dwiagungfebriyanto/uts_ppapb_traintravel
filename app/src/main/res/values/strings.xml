@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Train Travel</string>
+    <array name="stasiun">
+        <item>Hadir Tepat Waktu</item>
+        <item>Sakit</item>
+        <item>Terlambat</item>
+        <item>Izin</item>
+    </array>
+    <array name="kelas_kereta">
+        <item>Ekonomi</item>
+        <item>Bisnis</item>
+        <item>Eksekutif</item>
+        <item>Premium</item>
+    </array>
+</resources>
