@@ -6,4 +6,5 @@
     android:layout_height="wrap_content"
     android:textSize="15sp"
     android:padding="15dp"
+    android:textColor="@color/black"
     android:fontFamily="@font/montserrat_regular"/>

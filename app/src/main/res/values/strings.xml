@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Train Travel</string>
     <array name="stasiun">
-        <item>Hadir Tepat Waktu</item>
-        <item>Sakit</item>
-        <item>Terlambat</item>
-        <item>Izin</item>
+        <item>Pasar Senen - Jakarta</item>
+        <item>Gambir - Jakarta</item>
+        <item>Sentolo - Yogyakarta</item>
     </array>
     <array name="kelas_kereta">
         <item>Ekonomi</item>

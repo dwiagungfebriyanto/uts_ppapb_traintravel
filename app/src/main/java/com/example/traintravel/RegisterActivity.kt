@@ -59,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
             yearOfBirth = year
             selectedDate = "$dayOfMonth/${month + 1}/$year"
             binding.btnBirthdate.text = selectedDate
-        }, 2000, 0, 1)
+        }, 2023, 9, 14)
         datePicker.show()
     }
 }
