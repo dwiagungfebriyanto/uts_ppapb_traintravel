@@ -20,6 +20,7 @@ class PlanInputActivity : AppCompatActivity() {
     var hargaPaket = 0
     var hargaTotal = 0
     val bundle = Bundle()
+    var paket = arrayOf<String>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +42,13 @@ class PlanInputActivity : AppCompatActivity() {
                 showDatePicker()
             }
 
-            var paket = ""
-
             toggleMakanSiang.setOnClickListener{
                 if (toggleMakanSiang.isChecked) {
                     hargaPaket += 25000
-                    paket += "Makan siang  "
+                    paket = paket.plus("Makan siang")
                 } else {
                     hargaPaket -= 25000
+                    paket = paket.filterNot { it == "Makan siang" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -57,9 +57,10 @@ class PlanInputActivity : AppCompatActivity() {
             togglePinggirJendela.setOnClickListener{
                 if (togglePinggirJendela.isChecked) {
                     hargaPaket += 20000
-                    paket += "Duduk pinggir jendela  "
+                    paket = paket.plus("Duduk di pinggir jendela")
                 } else {
                     hargaPaket -= 20000
+                    paket = paket.filterNot { it == "Duduk di pinggir jendela" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -68,9 +69,10 @@ class PlanInputActivity : AppCompatActivity() {
             toggleDudukDepan.setOnClickListener{
                 if (toggleDudukDepan.isChecked) {
                     hargaPaket += 5000
-                    paket += "Duduk di depan  "
+                    paket = paket.plus("Duduk di depan")
                 } else {
                     hargaPaket -= 5000
+                    paket = paket.filterNot { it == "Duduk di depan" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -79,9 +81,10 @@ class PlanInputActivity : AppCompatActivity() {
             toggleChargingStation.setOnClickListener{
                 if (toggleChargingStation.isChecked) {
                     hargaPaket += 2000
-                    paket += "Charging station  "
+                    paket = paket.plus("Charging station")
                 } else {
                     hargaPaket -= 2000
+                    paket = paket.filterNot { it == "Charging station" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -90,9 +93,10 @@ class PlanInputActivity : AppCompatActivity() {
             toggleWifi.setOnClickListener{
                 if (toggleWifi.isChecked) {
                     hargaPaket += 15000
-                    paket += "Wi-Fi  "
+                    paket = paket.plus("Wi-Fi")
                 } else {
                     hargaPaket -= 15000
+                    paket = paket.filterNot { it == "Wi-Fi" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -101,9 +105,10 @@ class PlanInputActivity : AppCompatActivity() {
             toggleRuangMerokok.setOnClickListener{
                 if (toggleRuangMerokok.isChecked) {
                     hargaPaket += 50000
-                    paket += "Ruang khusus merokok  "
+                    paket = paket.plus("Ruang khusus merokok")
                 } else {
                     hargaPaket -= 50000
+                    paket = paket.filterNot { it == "Ruang khusus merokok" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -112,9 +117,10 @@ class PlanInputActivity : AppCompatActivity() {
             toggleRuangAnak.setOnClickListener{
                 if (toggleRuangAnak.isChecked) {
                     hargaPaket += 2500
-                    paket += "Ruang khusus anak  "
+                    paket = paket.plus("Ruang khusus anak")
                 } else {
                     hargaPaket -= 2500
+                    paket = paket.filterNot { it == "Ruang khusus anak" }.toTypedArray()
                 }
                 hargaTotal = hargaStasiunAwal + hargaStasiunTujuan + hargaTiket + hargaPaket
                 txtPrice.text = "Rp. " + hargaTotal.toString()
@@ -200,7 +206,7 @@ class PlanInputActivity : AppCompatActivity() {
                     if (selectedDate == "") {
                         Toast.makeText(this@PlanInputActivity, "Harap mengisi tanggal keberangkatan.", Toast.LENGTH_SHORT).show()
                     } else {
-                        bundle.putString("paket", paket)
+                        bundle.putStringArray("paket", paket)
                         val intentToDashboardActivity = Intent(this@PlanInputActivity, DashboardActivity::class.java)
                         intentToDashboardActivity.putExtras(bundle)
                         startActivity(intentToDashboardActivity)

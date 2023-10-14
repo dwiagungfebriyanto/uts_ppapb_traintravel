@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.traintravel.databinding.ActivityDashboardBinding
@@ -17,22 +18,34 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         with(binding) {
+            var tanggalKeberangkatan = "null"
+
             val intent = intent
             val bundle = intent.extras
-            val year = bundle?.getInt("year")
-            val month = bundle?.getInt("month")
-            val dayOfMonth = bundle?.getInt("dayOfMonth")
-            val tanggalKeberangkatan = bundle?.getString("selectedDate")
+            tanggalKeberangkatan = bundle?.getString("selectedDate").toString()
             val stasiunAwal = bundle?.getString("stasiunAwal")
             val stasiunTujuan = bundle?.getString("stasiunTujuan")
             val kelas = bundle?.getString("kelas")
-            val paket = bundle?.getString("paket")
+            val paket = bundle?.getStringArray("paket")
 
             txtStasiunAsal.text = stasiunAwal
             txtStasiunTujuan.text = stasiunTujuan
-//            txtTanggal.text = tanggalKeberangkatan
-//            txtKelas.text = kelas
-//            txtPaketTambahan.text = paket
+            txtTanggal.text = tanggalKeberangkatan
+            txtKelas.text = kelas
+
+            if (paket != null) {
+                val paketText = paket.joinToString(separator = "; ")
+                txtPaket.text = paketText
+            }
+
+            if (tanggalKeberangkatan != "null") {
+                latestTravelNoPlan.visibility = View.GONE
+                latestTravelPlan.visibility = View.VISIBLE
+            }
+
+            if (txtPaket.text == "") {
+                txtPaket.text = "Anda tidak memilih paket tambahan"
+            }
 
             calendarView.setOnDateChangeListener{_, year, month, dayOfMonth ->
                 val selectedDate = "$dayOfMonth/${month+1}/$year"

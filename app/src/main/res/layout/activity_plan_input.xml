@@ -11,34 +11,16 @@
     android:background="@color/white"
     tools:context=".PlanInputActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txt_add_plan"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Tambah Rencana Perjalanan"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/ic_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_arrow_back_ios_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_add_plan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Tambah Rencana Perjalanan"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ic_back"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollview"
@@ -47,7 +29,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/txt_add_plan"
         app:layout_constraintBottom_toTopOf="@id/btn_total_harga">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -436,138 +418,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
-
-<!--            <HorizontalScrollView-->
-<!--                android:id="@+id/scrollview_2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/scrollview_1">-->
-
-<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginBottom="20dp">-->
-
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/wifi"-->
-<!--                        android:layout_width="180dp"-->
-<!--                        android:layout_height="130dp"-->
-<!--                        android:background="@drawable/card_bg"-->
-<!--                        android:padding="20dp"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                        <ImageView-->
-<!--                            android:id="@+id/ic_wifi"-->
-<!--                            android:layout_width="40dp"-->
-<!--                            android:layout_height="40dp"-->
-<!--                            android:src="@drawable/baseline_wifi_24"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/txt_wifi"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:fontFamily="@font/montserrat_medium"-->
-<!--                            android:text="Wi-Fi"-->
-<!--                            android:textSize="15sp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--                        <androidx.appcompat.widget.SwitchCompat-->
-<!--                            android:id="@+id/toggle_wifi"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:thumb="@drawable/switch_thumb"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:track="@drawable/switch_track" />-->
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/ruang_merokok"-->
-<!--                        android:layout_width="180dp"-->
-<!--                        android:layout_height="130dp"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:background="@drawable/card_bg"-->
-<!--                        android:padding="20dp"-->
-<!--                        app:layout_constraintStart_toEndOf="@id/wifi"-->
-<!--                        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                        <ImageView-->
-<!--                            android:id="@+id/ic_ruang_merokok"-->
-<!--                            android:layout_width="40dp"-->
-<!--                            android:layout_height="40dp"-->
-<!--                            android:src="@drawable/baseline_smoking_rooms_24"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/txt_ruang_merokok"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:fontFamily="@font/montserrat_medium"-->
-<!--                            android:text="Ruang Khusus Merokok"-->
-<!--                            android:textSize="15sp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--                        <androidx.appcompat.widget.SwitchCompat-->
-<!--                            android:id="@+id/toggle_ruang_merokok"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:thumb="@drawable/switch_thumb"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:track="@drawable/switch_track" />-->
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                        android:id="@+id/ruang_anak"-->
-<!--                        android:layout_width="180dp"-->
-<!--                        android:layout_height="130dp"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:background="@drawable/card_bg"-->
-<!--                        android:padding="20dp"-->
-<!--                        app:layout_constraintStart_toEndOf="@id/ruang_merokok"-->
-<!--                        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--                        <ImageView-->
-<!--                            android:id="@+id/ic_ruang_anak"-->
-<!--                            android:layout_width="40dp"-->
-<!--                            android:layout_height="40dp"-->
-<!--                            android:src="@drawable/baseline_child_friendly_24"-->
-<!--                            app:layout_constraintStart_toStartOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--                        <TextView-->
-<!--                            android:id="@+id/txt_ruang_anak"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:fontFamily="@font/montserrat_medium"-->
-<!--                            android:text="Ruang Khusus Anank"-->
-<!--                            android:textSize="15sp"-->
-<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                            app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--                        <androidx.appcompat.widget.SwitchCompat-->
-<!--                            android:id="@+id/toggle_ruang_anak"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:thumb="@drawable/switch_thumb"-->
-<!--                            app:layout_constraintEnd_toEndOf="parent"-->
-<!--                            app:layout_constraintTop_toTopOf="parent"-->
-<!--                            app:track="@drawable/switch_track" />-->
-<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-<!--            </HorizontalScrollView>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
