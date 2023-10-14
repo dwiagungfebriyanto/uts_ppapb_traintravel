@@ -219,9 +219,6 @@ class PlanInputActivity : AppCompatActivity() {
 
     private fun showDatePicker() {
         val datePicker = DatePickerDialog(this, { _, year, month, dayOfMonth ->
-            bundle.putInt("year", year)
-            bundle.putInt("month", month)
-            bundle.putInt("dayOfMonth", dayOfMonth)
             selectedDate = "$dayOfMonth/${month + 1}/$year"
             bundle.putString("selectedDate", selectedDate)
             binding.btnTanggalKeberangkatan.text = selectedDate
